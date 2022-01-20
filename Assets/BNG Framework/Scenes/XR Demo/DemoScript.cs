@@ -2,14 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
-
-
-using UnityEditor;
-using Models;
-using Proyecto26;
-using System.Collections.Generic;
 using UnityEngine.Networking;
 
 namespace BNG {
@@ -158,27 +150,13 @@ namespace BNG {
         }
 
         public void ShootLauncher() {
-            RestClient.Post<ServerResponse>("http://10.0.0.187:8888/relays/3", new Post
-            {
-                state = true,
-
-            }).Then(response => {
-                EditorUtility.DisplayDialog("ID: ", response.id, "Ok");
-                EditorUtility.DisplayDialog("Date: ", response.date, "Ok");
-            });
+            
         }
 
 
         public void ShootLauncher2()
         {
-            RestClient.Post<ServerResponse>("http://10.0.0.187:8888/relays/3", new Post
-            {
-                state = false,
-
-            }).Then(response => {
-                EditorUtility.DisplayDialog("ID: ", response.id, "Ok");
-                EditorUtility.DisplayDialog("Date: ", response.date, "Ok");
-            });
+            
         }
 
         void initGravityCubes() {
